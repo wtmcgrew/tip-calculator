@@ -8,50 +8,48 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
 
+	<!-- Font Awesome -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
 	<!-- External Stylesheet -->
 	<link href="stylesheet.css" rel="stylesheet" type="text/css">
 
 	<title>Tip Calculator</title>
 </head>
 <body>
-	<div class="wrapper">
-		<div class="container" id="meal-container">
-			<div class="title">Cost of Meal</div>
-			<div class="input-container">
-				<span>$</span>
-				<input onkeyup="calculateBill()" type="text" id="bill-total-input" placeholder="0.00"/>
-			</div>
-		</div>
+	<div class="container">
+		<div class="calculator">
+			<h3>Tip Calculator</h3>
 
-		<div class="container">
-			<div class="title">Tip Percentage</div>
-			<div class="input-container">
-				<span>%</span>
-				<input onkeyup="calculateBill()" type="text" id="tip-input" placeholder="10"/>
-			</div>
-		</div>
+			<p></p>
 
-		<div class="container" id="bottom">
-			<div class="split-container">
-				<div class="title">Tip</div>
-				<div class="controls">
-					<span class="btn-container">
-						<button class="split-btn" onclick="increasePeople()">
-							<span class="btn-text">+</span>
-						</button>
-					</span>
-					<span class="split-amount" id="number-of-people">1</span>
-					<span class="btn-container">
-						<button class="split-btn" onclick="decreasePeople()">
-							<span class="btn-text">-</span>
-						</button>
-					</span>
-				</div>
+			<label for="amount">Bill Amount</label> 
+			<br>
+			<button><i class="fa-solid fa-dollar-sign"></i></button><input id="amount" type="text">
+			<br><br>
+			<label for=guest>Number of Guests</label>
+			<br>
+			<button><i class="fa-solid fa-person"></i></button><input id="guest" type="text">
+			<br><br>
+			<label for="tip">Tip</label>
+			<br>
+			<select id="tip">
+				<option value="">Choose...</option>
+				<option value="0.3">30%</option>
+				<option value="0.2">20%</option>
+				<option value="0.15">15%</option>
+				<option value="0.1">10%</option>
+				<option value="0.05">5%</option>
+				<option value="0">0%</option>
+			</select>
+
+			<div>
+				<p></p>
+				<button onclick="calculateBill()">Calculate</button>
 			</div>
-			<div class="total-container">
-				<div class="title">Bill Total</div>
-				<div class="total" id="bill-total">$0.00</div>
-			</div>
+
+			<div id="tip-amount"></div>
+
 		</div>
 	</div>
 
