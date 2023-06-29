@@ -1,32 +1,52 @@
-const amount = document.getElementById("amount");
-const guests = document.getElementById("guests");
-const tipPercentage = document.getElementById("tip");
-const tipAmount = document.getElementById("tip-amount");
+const amount = document.querySelector("#amount");
+const guests = document.querySelector("#guests");
+const tipPercentage = document.querySelector("#tip");
+const tipAmount = document.querySelector("#tip-amount");
+const totalAmount = document.querySelector("#total-amount");
 
-
-/*
-Function code to calculate tip
-Bill amount * tip percentage / number of gusts
-Then reset the values to empty strings
-Test case to check if fields are empty or show tip amout
-*/
-calculateBill = () => {
-	const tip = ((amount.value * tip.value) / (guests.value)).toFixed(2); // toFixed() returns just 2 decimal places
+calculateBillPlusTip = () => {
+	const totalBill = ((amount.value * tipPercentage.value) + (amount.value) / (guests.value)).toFixed(2);
 	amount.value = "";
 	guests.value = "";
-	tip.value = "";
+	tipPercentage.value = "";
 
-	if(tip === "NaN") { // Test case if input fields are left empty
-		tipAmount.innerHTML = "Tip $0 each";
+	if(totalBill === "NaN") {
+		totalAmount.textContent = "$0 due"
+		showTotalAmount();
+	}
+	else {
+		totalAmount.textContent = "Bill Total $ " + totalBill;
+		showTotalAmount();
+	}
+
+}
+
+calculateTip = () => {
+	const tip = ((amount.value * tipPercentage.value) / (guests.value)).toFixed(2);
+	amount.value = "";
+	guests.value = "";
+	tipPercentage.value = "";
+
+	if(tip === "NaN") {
+		tipAmount.textContent = "Tip $0 each";
 		showTipAmount();
-	} else {
-		tipAmount.innerHTMl = "Tip $" + tip + " each";
+	}
+	else {
+		tipAmount.textContent = "Tip $" + tip + " each";
 		showTipAmount();
 	}
 }
 
 showTipAmount = () => {
-	let show = tipAmount;
-	show.className = "show";
-	setTimeout(function(){show.className = show.className.replace("show", "");}, 3000);
+	let showTip = document.querySelector("#tip-amount");
+  	// Add the "show-tip" class to DIV
+	showTip.className = "show-tip";
+	setTimeout(function(){ showTip.className = showTip.className.replace("show-tip", ""); }, 3000);
+}
+
+showTotalAmount = () => {
+	let showTotal = document.querySelector("#total-amount");
+  	// Add the "show-total" class to DIV
+	showTotal.className = "show-total";
+	setTimeout(function(){ showTotal.className = showTotal.className.replace("show-total", ""); }, 3000);
 }
