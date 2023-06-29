@@ -76,11 +76,11 @@ body {
 	border: 1px solid #d3d3d3;
 }
 
-#tip-amount {
+#total-amount, #tip-amount {
 	visibility: hidden;
 	min-width: 250px;
 	margin: auto;
-	background-color: #add8e6;
+	background-color: #32cd32;
 	color: #ffffff;
 	bottom: 30px;
 	text-align: center;
@@ -89,7 +89,7 @@ body {
 	position: fixed;
 }
 
-#tip-amount.show {
+#total-amount.show-total, #tip-amount.show-tip {
 	visibility: visible;
 }
 
