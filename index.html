@@ -25,11 +25,11 @@
 
 			<label for="amount">Bill Amount</label> 
 			<br>
-			<button><i class="fa-solid fa-dollar-sign"></i></button><input id="amount" type="number">
+			<button><i class="fa-solid fa-dollar-sign"></i></button><input id="amount" type="number" min="0">
 			<br><br>
 			<label for=guest>Number of Guests</label>
 			<br>
-			<button><i class="fa-solid fa-person"></i></button><input id="guests" type="number">
+			<button><i class="fa-solid fa-person"></i></button><input id="guests" type="number" min="0">
 			<br><br>
 			<label for="tip-label">Tip</label>
 			<br>
@@ -45,10 +45,12 @@
 			<div class="calc-btn" style="text-align: center;">
 				<p ></p>
 				
-				<button onclick="calculateBill()">Calculate</button>
+				<button onclick="calculateBillPlusTip()">Bill Total</button>
+				<button onclick="calculateTip()">Calculate Tip</button>
 			</div>
 		</div>
 
+		<div id="total-amount"></div>
 		<div id="tip-amount"></div>
 
 	</div>
