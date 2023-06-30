@@ -40,8 +40,7 @@ calculateTip = () => {
 		showTipAmount();
 	}
 }
-
-// 
+ 
 showTipAmount = () => {
 	let showTip = document.querySelector("#tip-amount");
   	// Add the "show-tip" class to DIV
