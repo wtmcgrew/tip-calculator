@@ -48,6 +48,10 @@ body {
 	border-bottom-left-radius: 0;
 }
 
+.calc-btn {
+	text-align: center;
+}
+
 .calc-btn p {
 	border-top: 2px solid rgba(211, 211, 211, 0.5);
 }
