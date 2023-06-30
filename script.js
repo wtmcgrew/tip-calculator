@@ -21,7 +21,7 @@ calculateBillPlusTip = () => {
 
 // Calculation of bill total and resetting empty values for variables
 calculateTip = () => {
-	const tip = (amount.value * tipPercentage.value).toFixed(2);
+	const tip = Number((amount.value * tipPercentage.value)).toFixed(2);
 	amount.value = "";
 	tipPercentage.value = "";
 
