@@ -5,8 +5,9 @@ const totalAmount = document.querySelector("#total-amount");
 
 // Calculation of bill total and resetting empty values for variables
 calculateBillPlusTip = () => {
-	if(amount.value < 0) {
-		alert("Please enter posiitve value for Bill Amount");
+	// Test case to make sure a positive number is entered for Bill Amount input
+	if(amount.value < 0) { 
+		alert("Please enter positive value for Bill Amount");
 		return true;
 	}
 
@@ -24,7 +25,7 @@ calculateBillPlusTip = () => {
 	}
 }
 
-// Calculation of bill total and resetting empty values for variables
+// Calculation of tip and resetting empty values for variables
 calculateTip = () => {
 	const tip = Number((amount.value * tipPercentage.value)).toFixed(2);
 	amount.value = "";
