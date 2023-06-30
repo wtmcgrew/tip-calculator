@@ -5,6 +5,11 @@ const totalAmount = document.querySelector("#total-amount");
 
 // Calculation of bill total and resetting empty values for variables
 calculateBillPlusTip = () => {
+	if(amount.value < 0) {
+		alert("Please enter posiitve value for Bill Amount");
+		return true;
+	}
+
 	const totalBill = Number(((amount.value * tipPercentage.value)) + Number((amount.value))).toFixed(2);
 	amount.value = "";
 	tipPercentage.value = "";
